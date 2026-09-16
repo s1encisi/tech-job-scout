@@ -1,0 +1,18 @@
+使用 $env-ai-job-scout 完成一次真实的环境＋AI岗位检索和增量维护。
+固定工作区：{{WORKSPACE}}
+技能目录：{{SKILL_ROOT}}
+调用方已创建run_id：{{RUN_ID}}
+
+先读取技能SKILL.md、工作区profile.json和policy.json、CONTEXT.md以及当前checkpoint/last_run（存在才读）。
+不要问用户一串设计问题。未知个人事实保留未知，继续发现与核验。不要begin/finalize，不要改写技能、profile或policy；结束导出由外层程序负责。
+
+用python "{{SKILL_ROOT}}/scripts/scout.py" --workspace "{{WORKSPACE}}" plan获取任务矩阵和旧岗位复核队列。
+实际调用可用的实时搜索/浏览工具，先处理旧岗位临期复核，再执行12行业×2通道发现、官方回溯和专业/届别硬门槛核验。
+所有新事实必须来自真实网页。实际工具导出的正文保存后登记evidence，注册company/ATS来源，再小批ingest。
+只有搜索摘要或详情受阻的候选使用lead保存未核实入口，不计为岗位；真实投递链接必须有application_evidence。
+按照data-contract.md引用每项公开条件；单次最多20岗。不要用模型生成的正文冒充浏览器导出。
+每批写checkpoint和coverage，使用调用方run_id。每个task_id保持为plan给出的父任务ID；补充子查询放notes，不能靠更多ID虚增完成率。
+网页或工具无法访问时记录blocked/partial与probe，不改变用户资格，不将搜索失败解释为没有岗位，不偷偷放宽规则或升级权限。
+不要自动投递、登录、发邮件、创建调度或修改任何外部系统。
+
+结束时简述已执行的真实步骤、完成/未完成的矩阵任务、阻断和待办。不要声称Excel已导出；外层脚本随后验证并导出。

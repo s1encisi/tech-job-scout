@@ -1,0 +1,6 @@
+interface:
+  display_name: "环境＋AI 岗位每日追踪"
+  short_description: "官方核验、资格三值判断、每日Excel与证据记忆维护"
+  default_prompt: "使用 $env-ai-job-scout 执行一次环境＋人工智能实习、校招及应届友好岗位检索与增量更新；不自动投递。"
+policy:
+  allow_implicit_invocation: false

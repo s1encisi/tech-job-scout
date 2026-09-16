@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "profile_version": "1.0.0",
+  "display_name": "示例用户",
+  "background": "环境与人工智能交叉方向；请根据实际情况配置",
+  "facts": {
+    "degree_program": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "major": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "graduation_year": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "student_status": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "experience_years": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "internship_days": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "internship_months": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "start_date": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "language": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "work_authorization": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    },
+    "other": {
+      "value": null,
+      "status": "unknown",
+      "source": null,
+      "confirmed_at": null
+    }
+  },
+  "search_skills": [
+    "Python",
+    "机器学习",
+    "强化学习",
+    "代理模型",
+    "多目标优化",
+    "工业过程建模",
+    "数据分析",
+    "可解释机器学习"
+  ],
+  "skill_provenance": "示例检索关键词，不代表任何使用者的已确认技能；使用前按实际情况修改。",
+  "research_domains": [
+    "环境过程优化",
+    "工业智能"
+  ],
+  "search_scope": {
+    "locations": "中国全国（任务默认检索范围，不是已确认工作地点偏好）",
+    "employers": [
+      "央企",
+      "地方国企",
+      "国有控股",
+      "民营",
+      "民营控股",
+      "其他企业：性质单列"
+    ],
+    "job_types": [
+      "internship",
+      "campus",
+      "entry"
+    ],
+    "exclude_default": [
+      "需多年经验岗位进入历史与排除，不混入可投清单"
+    ]
+  },
+  "unknown_policy": "不从博士申请年份、会话时间、年龄或模型记忆推断毕业届别、正式专业名称/代码和实习可用时间。",
+  "update_authority": "只有用户确认才能修改个人事实；检索代理只能提出 profile.proposed.json，不得自动提升为 confirmed。"
+}

@@ -1,0 +1,12 @@
+{
+  "notice": "FICTIONAL OFFLINE DEMO — not real job search results",
+  "unique_jobs": 1,
+  "eligible_fixture_jobs": 1,
+  "duplicate_ingest_new_jobs": 0,
+  "quarantined_observations": 1,
+  "unverified_leads": 1,
+  "workbook_sheets": 13,
+  "run_status": "partial",
+  "completed_search_tasks": 0,
+  "planned_search_tasks": 24
+}

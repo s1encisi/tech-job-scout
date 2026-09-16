@@ -1,0 +1,69 @@
+{
+  "employer_key": "EXAMPLE_ONLY_DO_NOT_IMPORT",
+  "company": "【仅结构示例，非真实企业】",
+  "source_id": "SOURCE_EXAMPLE",
+  "job_id": null,
+  "campaign": "unknown-cycle:EXAMPLE_ONLY",
+  "title": "【仅结构示例，非真实岗位】",
+  "locations": [],
+  "job_type": "unknown",
+  "industry": "环保水务",
+  "match_track": "transferable",
+  "url": "https://jobs.example.test/detail/EXAMPLE_ONLY",
+  "application_url": null,
+  "observed_at": "2000-01-01T00:00:00+00:00",
+  "status": "unknown",
+  "status_evidence": {
+    "evidence_id": "REPLACE_WITH_REAL_CAPTURE_ID",
+    "quote": "必须来自真实工具导出，不要复制此示例"
+  },
+  "identity_evidence": {
+    "evidence_id": "REPLACE_WITH_REAL_CAPTURE_ID",
+    "quote": "必须来自真实工具导出，不要复制此示例"
+  },
+  "facts": {
+    "location_raw": null,
+    "recruitment_type_raw": null,
+    "duties_raw": null,
+    "degree_raw": null,
+    "major_raw": null,
+    "cohort_raw": null,
+    "skills_raw": null,
+    "tools_raw": null,
+    "deadline_raw": null,
+    "salary_raw": null,
+    "experience_raw": null,
+    "campaign_raw": null
+  },
+  "checks": [
+    {
+      "axis": "degree_program",
+      "rule": "unpublished",
+      "expected": null,
+      "evidence": null
+    },
+    {
+      "axis": "major",
+      "rule": "unpublished",
+      "expected": null,
+      "evidence": null
+    },
+    {
+      "axis": "graduation_year",
+      "rule": "unpublished",
+      "expected": null,
+      "evidence": null
+    }
+  ],
+  "deadline_at": null,
+  "opens_at": null,
+  "date_conflict": false,
+  "requirements_review": {
+    "all_public_hard_requirements_captured": false,
+    "reviewer": "待实际复核",
+    "tool_ref": "待真实工具引用"
+  },
+  "match_reason": "这是结构模板，不是岗位，也不是证据。",
+  "matched_skills": [],
+  "application_evidence": null
+}

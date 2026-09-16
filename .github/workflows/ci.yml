@@ -1,0 +1,34 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12']
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Compile Python sources
+        run: python -m compileall -q scripts tests examples
+      - name: Offline regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Reproduce fictional demo
+        run: python examples/demo.py --output demo-output
+      - name: Verify source manifest
+        run: python scripts/manifest.py check
