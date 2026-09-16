@@ -102,4 +102,8 @@ SKILL.md         Codex 执行协议
 
 ## 参与开发
 
-修改后运行测试与离线演示，提交新文件后用 `python scripts/manifest.py build` 更新源码校验清单。详细约定见 [CONTRIBUTING.md](CONTRIBUTING.md)。公开可见不等于自动授予再分发许可；当前仓库未声明开源许可证。
+修改后运行测试与离线演示，暂存新文件后用 `python scripts/manifest.py build` 更新源码校验清单。详细约定见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE)，许可文本依据 [Open Source Initiative](https://opensource.org/license/mit)。
