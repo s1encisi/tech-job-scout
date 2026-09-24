@@ -1,0 +1,2677 @@
+{
+  "schema_version": 1,
+  "version": "2.0.0",
+  "scope": "中国互联网、计算机与游戏行业的公开实习及全职招聘",
+  "companies": [
+    {
+      "id": "tencent",
+      "name": "腾讯",
+      "sector": "综合互联网",
+      "priority": 1,
+      "sources": [
+        {
+          "id": "tencent-public",
+          "url": "https://careers.tencent.com/jobopportunity.html",
+          "adapter": "tencent",
+          "channels": [
+            "fulltime"
+          ],
+          "entry_status": "live_api_checked",
+          "api_url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+          "checked_at": "2026-09-17"
+        },
+        {
+          "id": "tencent-campus",
+          "url": "https://join.qq.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "bytedance",
+      "name": "字节跳动",
+      "sector": "综合互联网",
+      "priority": 1,
+      "sources": [
+        {
+          "id": "bytedance-public",
+          "url": "https://jobs.bytedance.com/experienced/position",
+          "adapter": "feishu",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "browser_fallback_405",
+          "api_url": "https://jobs.bytedance.com/api/v1/search/job/posts",
+          "portal_type": 1
+        },
+        {
+          "id": "bytedance-campus",
+          "url": "https://jobs.bytedance.com/campus/position",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "alibaba",
+      "name": "阿里巴巴",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "alibaba-public",
+          "url": "https://talent.alibaba.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "baidu",
+      "name": "百度",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "baidu-public",
+          "url": "https://talent.baidu.com/jobs/list",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "netease",
+      "name": "网易",
+      "sector": "综合互联网",
+      "priority": 1,
+      "sources": [
+        {
+          "id": "netease-public",
+          "url": "https://hr.163.com/job-list.html",
+          "adapter": "netease",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "live_api_checked",
+          "api_url": "https://hr.163.com/api/hr163/position/queryPage",
+          "checked_at": "2026-09-17"
+        },
+        {
+          "id": "netease-campus",
+          "url": "https://campus.163.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "kuaishou",
+      "name": "快手",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "kuaishou-public",
+          "url": "https://zhaopin.kuaishou.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "xiaohongshu",
+      "name": "小红书",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "xiaohongshu-public",
+          "url": "https://job.xiaohongshu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "meituan",
+      "name": "美团",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "meituan-public",
+          "url": "https://career.meituan.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "jd",
+      "name": "京东",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "jd-public",
+          "url": "https://zhaopin.jd.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "pdd",
+      "name": "拼多多",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "pdd-public",
+          "url": "https://careers.pinduoduo.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ant",
+      "name": "蚂蚁集团",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ant-public",
+          "url": "https://talent.antgroup.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "didi",
+      "name": "滴滴",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "didi-public",
+          "url": "https://talent.didiglobal.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "sina",
+      "name": "新浪",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "sina-public",
+          "url": "https://career.sina.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "sohu",
+      "name": "搜狐",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "sohu-public",
+          "url": "https://hr.sohu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "360",
+      "name": "三六零",
+      "sector": "综合互联网",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "360-public",
+          "url": "https://hr.360.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ctrip",
+      "name": "携程",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ctrip-public",
+          "url": "https://careers.trip.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "dewu",
+      "name": "得物",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "dewu-public",
+          "url": "https://careers.dewu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "vipshop",
+      "name": "唯品会",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "vipshop-public",
+          "url": "https://careers.vip.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "suning",
+      "name": "苏宁",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "suning-public",
+          "url": "https://careers.suning.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ke",
+      "name": "贝壳",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ke-public",
+          "url": "https://join.ke.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "name": "58同城",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "58-public",
+          "url": "https://careers.58.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "BOSS直聘",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "boss-public",
+          "url": "https://www.zhipin.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "zhaopin",
+      "name": "智联招聘",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "zhaopin-public",
+          "url": "https://www.zhaopin.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "liepin",
+      "name": "猎聘",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "liepin-public",
+          "url": "https://www.liepin.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "shein",
+      "name": "SHEIN",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "shein-public",
+          "url": "https://careers.shein.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "youzan",
+      "name": "有赞",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "youzan-public",
+          "url": "https://www.youzan.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "weimob",
+      "name": "微盟",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "weimob-public",
+          "url": "https://www.weimob.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "manbang",
+      "name": "满帮",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "manbang-public",
+          "url": "https://www.ymm56.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "huolala",
+      "name": "货拉拉",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "huolala-public",
+          "url": "https://www.huolala.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "qianxun",
+      "name": "谦寻",
+      "sector": "电商与生活服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "qianxun-public",
+          "url": "https://www.qianxun.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "bilibili",
+      "name": "哔哩哔哩",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "bilibili-public",
+          "url": "https://jobs.bilibili.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "zhihu",
+      "name": "知乎",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "zhihu-public",
+          "url": "https://www.zhihu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "weibo",
+      "name": "微博",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "weibo-public",
+          "url": "https://career.sina.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "douban",
+      "name": "豆瓣",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "douban-public",
+          "url": "https://www.douban.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "momo",
+      "name": "挚文集团",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "momo-public",
+          "url": "https://www.immomo.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "soul",
+      "name": "Soul",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "soul-public",
+          "url": "https://www.soulapp.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "qidian",
+      "name": "阅文集团",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "qidian-public",
+          "url": "https://join.yuewen.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "zhangyue",
+      "name": "掌阅",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "zhangyue-public",
+          "url": "https://www.ireader.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "iqiyi",
+      "name": "爱奇艺",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "iqiyi-public",
+          "url": "https://join.iqiyi.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "mango",
+      "name": "芒果TV",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "mango-public",
+          "url": "https://www.mgtv.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "huya",
+      "name": "虎牙",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "huya-public",
+          "url": "https://hr.huya.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "douyu",
+      "name": "斗鱼",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "douyu-public",
+          "url": "https://www.douyu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ximalaya",
+      "name": "喜马拉雅",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ximalaya-public",
+          "url": "https://www.ximalaya.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "lizhi",
+      "name": "荔枝",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "lizhi-public",
+          "url": "https://www.lizhi.fm",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "wanwuxinsheng",
+      "name": "万物新生",
+      "sector": "内容与社交",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "wanwuxinsheng-public",
+          "url": "https://www.atrenew.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "kingsoft",
+      "name": "金山软件",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "kingsoft-public",
+          "url": "https://join.kingsoft.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "wps",
+      "name": "金山办公",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "wps-public",
+          "url": "https://join.wps.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "yonyou",
+      "name": "用友",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "yonyou-public",
+          "url": "https://career.yonyou.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "kingdee",
+      "name": "金蝶",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "kingdee-public",
+          "url": "https://www.kingdee.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "sangfor",
+      "name": "深信服",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "sangfor-public",
+          "url": "https://hr.sangfor.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "qianxin",
+      "name": "奇安信",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "qianxin-public",
+          "url": "https://www.qianxin.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "nsfocus",
+      "name": "绿盟科技",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "nsfocus-public",
+          "url": "https://www.nsfocus.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "asiainfo",
+      "name": "亚信科技",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "asiainfo-public",
+          "url": "https://www.asiainfo.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "yunxin",
+      "name": "容联云",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "yunxin-public",
+          "url": "https://www.yuntongxun.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "qiniu",
+      "name": "七牛云",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "qiniu-public",
+          "url": "https://www.qiniu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ucloud",
+      "name": "优刻得",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ucloud-public",
+          "url": "https://www.ucloud.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "qingcloud",
+      "name": "青云科技",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "qingcloud-public",
+          "url": "https://www.qingcloud.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "pingcap",
+      "name": "PingCAP",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "pingcap-public",
+          "url": "https://www.pingcap.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "smartx",
+      "name": "SmartX",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "smartx-public",
+          "url": "https://www.smartx.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "fenxiang",
+      "name": "纷享销客",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "fenxiang-public",
+          "url": "https://www.fxiaoke.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "mingdao",
+      "name": "明道云",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "mingdao-public",
+          "url": "https://www.mingdao.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "fanruan",
+      "name": "帆软",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "fanruan-public",
+          "url": "https://join.fanruan.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "seeyon",
+      "name": "致远互联",
+      "sector": "企业软件与云",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "seeyon-public",
+          "url": "https://www.seeyon.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "sensetime",
+      "name": "商汤科技",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "sensetime-public",
+          "url": "https://join.sensetime.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "megvii",
+      "name": "旷视科技",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "megvii-public",
+          "url": "https://www.megvii.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "iflytek",
+      "name": "科大讯飞",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "iflytek-public",
+          "url": "https://job.iflytek.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "cloudwalk",
+      "name": "云从科技",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "cloudwalk-public",
+          "url": "https://www.cloudwalk.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "yitu",
+      "name": "依图科技",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "yitu-public",
+          "url": "https://www.yitutech.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "4paradigm",
+      "name": "第四范式",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "4paradigm-public",
+          "url": "https://www.4paradigm.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "zhipu",
+      "name": "智谱",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "zhipu-public",
+          "url": "https://www.zhipuai.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "moonshot",
+      "name": "月之暗面",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "moonshot-public",
+          "url": "https://www.moonshot.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "minimax-public",
+          "url": "https://www.minimaxi.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "baichuan",
+      "name": "百川智能",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "baichuan-public",
+          "url": "https://www.baichuan-ai.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "stepfun",
+      "name": "阶跃星辰",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "stepfun-public",
+          "url": "https://www.stepfun.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "01ai",
+      "name": "零一万物",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "01ai-public",
+          "url": "https://www.lingyiwanwu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "name": "深度求索",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "deepseek-public",
+          "url": "https://www.deepseek.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "siliconflow",
+      "name": "硅基流动",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "siliconflow-public",
+          "url": "https://www.siliconflow.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "infinigence",
+      "name": "无问芯穹",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "infinigence-public",
+          "url": "https://www.infinigence.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "horizon",
+      "name": "地平线",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "horizon-public",
+          "url": "https://careers.horizon.ai",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "momenta",
+      "name": "Momenta",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "momenta-public",
+          "url": "https://www.momenta.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "pony",
+      "name": "小马智行",
+      "sector": "人工智能",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "pony-public",
+          "url": "https://www.pony.ai",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "huawei",
+      "name": "华为",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "huawei-public",
+          "url": "https://career.huawei.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "zte",
+      "name": "中兴通讯",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "zte-public",
+          "url": "https://job.zte.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "xiaomi",
+      "name": "小米",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "xiaomi-public",
+          "url": "https://hr.xiaomi.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "lenovo",
+      "name": "联想",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "lenovo-public",
+          "url": "https://jobs.lenovo.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "oppo",
+      "name": "OPPO",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "oppo-public",
+          "url": "https://careers.oppo.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "vivo",
+      "name": "vivo",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "vivo-public",
+          "url": "https://hr.vivo.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "honor",
+      "name": "荣耀",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "honor-public",
+          "url": "https://career.honor.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "dji",
+      "name": "大疆",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "dji-public",
+          "url": "https://we.dji.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "inspur",
+      "name": "浪潮",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "inspur-public",
+          "url": "https://career.inspur.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "h3c",
+      "name": "新华三",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "h3c-public",
+          "url": "https://career.h3c.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ruijie",
+      "name": "锐捷网络",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ruijie-public",
+          "url": "https://www.ruijie.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "cambricon-public",
+          "url": "https://www.cambricon.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "moorethreads",
+      "name": "摩尔线程",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "moorethreads-public",
+          "url": "https://www.mthreads.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "iluvatar",
+      "name": "天数智芯",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "iluvatar-public",
+          "url": "https://www.iluvatar.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "biren",
+      "name": "壁仞科技",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "biren-public",
+          "url": "https://www.birentech.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "loongson",
+      "name": "龙芯中科",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "loongson-public",
+          "url": "https://www.loongson.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "phyt",
+      "name": "飞腾",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "phyt-public",
+          "url": "https://www.phytium.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "montage",
+      "name": "澜起科技",
+      "sector": "计算机与基础设施",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "montage-public",
+          "url": "https://www.montage-tech.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "mihoyo",
+      "name": "米哈游",
+      "sector": "游戏研发与发行",
+      "priority": 1,
+      "sources": [
+        {
+          "id": "mihoyo-social",
+          "url": "https://jobs.mihoyo.com/position",
+          "adapter": "mihoyo",
+          "hire_type": 0,
+          "api_url": "https://ats.openout.mihoyo.com/ats-portal/v1/job/list",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "live_api_checked",
+          "checked_at": "2026-09-17"
+        },
+        {
+          "id": "mihoyo-campus",
+          "url": "https://jobs.mihoyo.com/campus/position",
+          "adapter": "mihoyo",
+          "hire_type": 1,
+          "api_url": "https://ats.openout.mihoyo.com/ats-portal/v1/job/list",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "live_api_checked",
+          "checked_at": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "lilith",
+      "name": "莉莉丝",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "lilith-official-1",
+          "url": "https://jobs.lilith.com/index.html",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "official_entry_located",
+          "checked_at": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "papergames",
+      "name": "叠纸游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "papergames-official-1",
+          "url": "https://papergames.jobs.feishu.cn/social",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "official_entry_located",
+          "checked_at": "2026-09-17"
+        },
+        {
+          "id": "papergames-official-2",
+          "url": "https://papergames.jobs.feishu.cn/campus",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "official_entry_located",
+          "checked_at": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "hypergryph",
+      "name": "鹰角网络",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "hypergryph-official-1",
+          "url": "https://career.hypergryph.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "official_entry_located",
+          "checked_at": "2026-09-17"
+        },
+        {
+          "id": "hypergryph-official-2",
+          "url": "https://campus.hypergryph.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "official_entry_located",
+          "checked_at": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "kuro",
+      "name": "库洛游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "kuro-official-1",
+          "url": "https://kurogames.com/join",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "official_entry_located",
+          "checked_at": "2026-09-17"
+        }
+      ]
+    },
+    {
+      "id": "perfectworld",
+      "name": "完美世界",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "perfectworld-public",
+          "url": "https://jobs.games.wanmei.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "37games",
+      "name": "三七互娱",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "37games-public",
+          "url": "https://zhaopin.37.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "g-bits",
+      "name": "吉比特",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "g-bits-public",
+          "url": "https://hr.g-bits.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "xd",
+      "name": "心动",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "xd-public",
+          "url": "https://www.xd.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "seasun",
+      "name": "西山居",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "seasun-public",
+          "url": "https://hr.xishanju.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "shengqu",
+      "name": "盛趣游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "shengqu-public",
+          "url": "https://www.shengqugames.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "youzu",
+      "name": "游族网络",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "youzu-public",
+          "url": "https://www.youzu.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "funplus",
+      "name": "趣加",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "funplus-public",
+          "url": "https://www.funplus.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "igg",
+      "name": "IGG",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "igg-public",
+          "url": "https://www.igg.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "4399",
+      "name": "四三九九",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "4399-public",
+          "url": "https://web.4399.com/campus",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "name": "英雄游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "hero-public",
+          "url": "https://www.yingxiong.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "boke",
+      "name": "波克城市",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "boke-public",
+          "url": "https://www.boke.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "yotta",
+      "name": "友塔游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "yotta-public",
+          "url": "https://www.yottagames.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "zlong",
+      "name": "紫龙游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "zlong-public",
+          "url": "https://www.zlongame.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "tiantian",
+      "name": "巨人网络",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "tiantian-public",
+          "url": "https://www.ga-me.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "kunlun",
+      "name": "昆仑万维",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "kunlun-public",
+          "url": "https://www.kunlun.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "cmge",
+      "name": "中手游",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "cmge-public",
+          "url": "https://www.cmge.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "snail",
+      "name": "蜗牛游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "snail-public",
+          "url": "https://www.snail.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "leiting",
+      "name": "雷霆游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "leiting-public",
+          "url": "https://www.leiting.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "leilong",
+      "name": "乐元素",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "leilong-public",
+          "url": "https://www.happyelements.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "bilibili-game",
+      "name": "哔哩哔哩游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "bilibili-game-public",
+          "url": "https://jobs.bilibili.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "netease-game",
+      "name": "网易游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "netease-game-public",
+          "url": "https://game.campus.163.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "tencent-game",
+      "name": "腾讯游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "tencent-game-public",
+          "url": "https://join.qq.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "longtu",
+      "name": "龙图游戏",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "longtu-public",
+          "url": "https://www.longtugame.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "duoyi",
+      "name": "多益网络",
+      "sector": "游戏研发与发行",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "duoyi-public",
+          "url": "https://www.duoyi.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "eastmoney",
+      "name": "东方财富",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "eastmoney-public",
+          "url": "https://www.eastmoney.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "ths",
+      "name": "同花顺",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "ths-public",
+          "url": "https://www.10jqka.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "hundsun",
+      "name": "恒生电子",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "hundsun-public",
+          "url": "https://campus.hundsun.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "wind",
+      "name": "万得",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "wind-public",
+          "url": "https://www.wind.com.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "futu",
+      "name": "富途",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "futu-public",
+          "url": "https://www.futuholdings.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "longbridge",
+      "name": "长桥",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "longbridge-public",
+          "url": "https://longbridge.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "lexin",
+      "name": "乐信",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "lexin-public",
+          "url": "https://www.lexin.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "qihoo-finance",
+      "name": "奇富科技",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "qihoo-finance-public",
+          "url": "https://www.qifu.tech",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "csdn",
+      "name": "CSDN",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "csdn-public",
+          "url": "https://www.csdn.net",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "segmentfault",
+      "name": "思否",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "segmentfault-public",
+          "url": "https://segmentfault.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "oschina",
+      "name": "开源中国",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "oschina-public",
+          "url": "https://www.oschina.net",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "coding",
+      "name": "CODING",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "coding-public",
+          "url": "https://coding.net",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "jihu",
+      "name": "极狐GitLab",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "jihu-public",
+          "url": "https://about.gitlab.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "juejin",
+      "name": "稀土掘金",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "juejin-public",
+          "url": "https://juejin.cn",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    },
+    {
+      "id": "nowcoder",
+      "name": "牛客",
+      "sector": "金融与开发者服务",
+      "priority": 2,
+      "sources": [
+        {
+          "id": "nowcoder-public",
+          "url": "https://www.nowcoder.com",
+          "adapter": "html",
+          "channels": [
+            "internship",
+            "fulltime"
+          ],
+          "entry_status": "entry_to_check"
+        }
+      ]
+    }
+  ],
+  "notice": "企业清单是搜索覆盖分母。entry_to_check 入口需读取官网或核对官方跳转关系；主站不能等同已接通招聘接口。"
+}

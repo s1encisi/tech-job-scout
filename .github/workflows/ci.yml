@@ -30,5 +30,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Reproduce fictional demo
         run: python examples/demo.py --output demo-output
+      - name: Reproduce discovery pipeline
+        run: python examples/discovery_demo.py --output tech-workspace/offline-demo
       - name: Verify source manifest
         run: python scripts/manifest.py check

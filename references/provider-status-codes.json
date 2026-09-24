@@ -1,0 +1,11 @@
+{
+  "tencent": {
+    "E1005": {
+      "meaning": "closed",
+      "message": "对不起，该岗位已停招。",
+      "verified_at": "2026-09-17T15:00:41+00:00",
+      "source_url": "https://cdn.multilingualres.hr.tencent.com/careersmlr/HostMsg_zh-cn.js",
+      "source_sha256": "9f107fbbdee335d852f71117f18cbaa40d7c8bf576810ff28aa030e456fad508"
+    }
+  }
+}

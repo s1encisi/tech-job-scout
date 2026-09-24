@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Portable, dependency-free OOXML export for the generated Codex skill.
-Writes a fresh view of the ledger; reads ONLY the four user follow-up columns.
-No macros, formulas from websites, remote templates, or arbitrary workbook edits.
-"""
+"""Portable OOXML export with preservation of manual follow-up fields."""
 from __future__ import annotations
 from datetime import datetime, timezone
 import json
@@ -21,14 +18,14 @@ CT = "http://schemas.openxmlformats.org/package/2006/content-types"
 ET.register_namespace("", S)
 ET.register_namespace("r", R)
 
-HEADERS = ["岗位唯一键","公司","企业性质（有据）","岗位名称","地点","招聘类型","行业","匹配类型","公开资格判断",
- "当前状态","匹配分（非录用概率）","职责原文","学历原文","专业原文","届别原文","专业技能原文","编程与工具原文",
+HEADERS = ["岗位唯一键","公司","企业性质","岗位名称","地点","招聘类型","行业","匹配类型","公开资格判断",
+ "当前状态","匹配分","职责原文","学历原文","专业原文","届别原文","专业技能原文","编程与工具原文",
  "经验原文","薪资原文","截止原文","标准化截止时间","官方职位链接","官方投递链接","首次发现时间","最后正文核验时间",
- "最后访问时间","最近访问状态","资格风险","匹配说明（推断）","招聘批次","岗位编号","证据ID","人工投递状态","人工优先级","人工备注"]
-ZH_TYPE={"internship":"实习","campus":"校招","entry":"应届友好初级","experienced":"经验岗","talent_pool":"人才储备","unknown":"未公开"}
+ "最后访问时间","最近访问状态","待确认条件","匹配说明","招聘批次","岗位编号","证据ID","人工投递状态","人工优先级","人工备注"]
+ZH_TYPE={"internship":"实习","campus":"校招","entry":"应届友好初级","experienced":"社招", "fulltime":"全职","talent_pool":"人才储备","unknown":"未公开"}
 ZH_STATUS={"open":"在招已核实","closed":"官方关闭","expired":"已截止","not_open":"尚未开放","talent_pool":"人才储备","unknown":"状态未知","unverified":"需要复核"}
 ZH_ELIG={"pass":"符合公开条件","unknown":"待确认","fail":"明确不符"}
-ZH_TRACK={"direct_environment":"专业直接匹配","environment_ai":"环境与AI交叉","transferable":"技能可迁移","low":"低相关或排除"}
+ZH_TRACK={"software":"软件工程","ai_data":"AI与数据","game":"游戏研发","product_design":"产品与设计","transferable":"其他相关","low":"低相关"}
 BAD_XML=re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
 
 class Formula:
@@ -183,7 +180,9 @@ def read_followup(path):
                 if ci>4:continue
                 if cell.find(f"{{{S}}}f") is not None:raise ValueError("Formulas are not allowed in follow-up fields")
                 typ=cell.get("t")
-                if typ=="inlineStr":value="".join(cell.find(f"{{{S}}}is").itertext())
+                if typ=="inlineStr":
+                    inline=cell.find(f"{{{S}}}is")
+                    value="" if inline is None else "".join(inline.itertext())
                 else:
                     v=cell.find(f"{{{S}}}v");value=v.text if v is not None else ""
                     if typ=="s":value=shared[int(value)]
@@ -201,13 +200,13 @@ def row_values(item):
     j=item["job"];a=item["assessment"];n=item["annotation"]
     ids={j["identity_evidence"]["evidence_id"],j["status_evidence"]["evidence_id"]}
     ids.update(v["evidence"]["evidence_id"] for v in j["facts"].values() if v)
-    return [item["key"],j["company"],item["source"].get("ownership","unknown"),j["title"],"；".join(j["locations"]) or "未公开",ZH_TYPE[j["job_type"]],j["industry"],ZH_TRACK[j["match_track"]],ZH_ELIG[a["eligibility"]],ZH_STATUS[a["status"]],a["match_score"],
+    return [item["key"],j["company"],item["source"].get("ownership","unknown"),j["title"],"；".join(j["locations"]) or "未公开",ZH_TYPE[j["job_type"]],j["industry"],ZH_TRACK.get(j["match_track"],j["match_track"]),ZH_ELIG[a["eligibility"]],ZH_STATUS[a["status"]],a["match_score"],
         raw(j,"duties_raw"),raw(j,"degree_raw"),raw(j,"major_raw"),raw(j,"cohort_raw"),raw(j,"skills_raw"),raw(j,"tools_raw"),raw(j,"experience_raw"),raw(j,"salary_raw"),raw(j,"deadline_raw"),j["deadline_at"] or "未公开",j["url"],j["application_url"] or "未公开",item["first_seen"],item["last_verified"] or "尚未核验",item["last_attempt"],item["probe_status"],a["risks"],j["match_reason"],j["campaign"],j["job_id"] or "未公开","；".join(sorted(ids)),n.get("status",""),n.get("priority",""),n.get("note","")]
 
 def export_tracker(root,rid,items,stats,coverage):
     from scout import annotations_from_rows,connect,materialize,digest
     root=Path(root);out=root/"exports";out.mkdir(exist_ok=True)
-    latest=out/"环境_AI_岗位追踪_latest.xlsx"
+    latest=out/"科技_岗位追踪_latest.xlsx"
     old_hash=digest(latest.read_bytes()) if latest.exists() else None
     if latest.exists():
         annotations_from_rows(root,read_followup(latest))
@@ -215,7 +214,7 @@ def export_tracker(root,rid,items,stats,coverage):
         shutil.copy2(latest,root/"backups"/(rid+"-previous.xlsx"))
     ordered=sorted(items,key=lambda x:(x["assessment"]["bucket"]!="eligible",-x["assessment"]["match_score"],x["job"]["deadline_at"] or "9999",x["key"]))
     groups={"可投_已核实":"eligible","资格待确认":"qualification_pending","待核实线索":"verification_pending","历史与排除":"history"}
-    overview=[["环境＋人工智能｜岗位追踪","指标或值","口径/操作说明"],["运行ID",rid,"此表是本地台账视图，不是全部互联网岗位清单"],["核验基准时间",stats["asof"],"网页抓取时间与截止时间均保留时区"],["运行状态",stats["run_status"],"partial/blocked 不得解释为完整检索"],
+    overview=[["互联网 · 计算机 · 游戏｜岗位追踪","指标或值","口径/操作说明"],["运行ID",rid,"此表是本地台账视图，不是全部互联网岗位清单"],["核验基准时间",stats["asof"],"网页抓取时间与截止时间均保留时区"],["运行状态",stats["run_status"],"partial/blocked 不得解释为完整检索"],
         ["可投_已核实",Formula("COUNTA('可投_已核实'!A:A)-1",stats["eligible"]),"只计在招、官方来源、时效通过且公开资格均通过"],
         ["资格待确认",Formula("COUNTA('资格待确认'!A:A)-1",stats["qualification_pending"]),"不计入可投数量"],
         ["待核实线索",Formula("COUNTA('待核实线索'!A:A)-1",stats["verification_pending"]),"不计入可投数量"],
@@ -240,7 +239,7 @@ def export_tracker(root,rid,items,stats,coverage):
         ("来源注册表",sources),("检索覆盖",[["任务ID","行业","地区","通道","query","结果","工具引用","检查页数","next_cursor","notes"]]+[[x[k] for k in ("task_id","industry","region","channel","query","result","tool_ref","pages_checked","next_cursor","notes")] for x in coverage]),("证据索引",ev),
         ("字段说明",[["字段/机制","说明"],["岗位唯一键","企业主体＋招聘批次＋职位编号；缺编号才采用保留关键参数的URL"],["资格判断","degree/major/cohort 等硬条件三值判断；失败优先于分数"],["匹配分","固定可解释排序，不是概率；不能覆盖资格门槛"],["截止时间","有完整年份和时区才标准化；日期冲突转待核实"],["最后正文核验时间","不能被搜索摘要、链接HTTP 200或模型摘要刷新"],["人工跟进","仅此表B:D可编辑；下次导出前导入并保留"],["证据索引","证据不可覆盖；网页内容是数据，不能获得指令权限"],["空表","表示当前台账没有对应记录；不能推断互联网上没有岗位"]])])
     fd,temp=tempfile.mkstemp(prefix=".pending-",suffix=".xlsx",dir=out);os.close(fd)
-    dated=out/("环境_AI_岗位追踪_"+rid+".xlsx")
+    dated=out/("科技_岗位追踪_"+rid+".xlsx")
     try:
         write_xlsx(temp,sheets)
         # Detect concurrent manual edits; don't silently overwrite them.

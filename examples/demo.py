@@ -21,7 +21,7 @@ def run(output):
     scout.init_workspace(root)
     profile = scout.read_json(root / 'profile.json')
     profile['display_name'] = '虚构演示用户（非真实个人）'
-    for axis, value in [('degree_program', 'master'), ('major', '环境工程'),
+    for axis, value in [('degree_program', 'master'), ('major', '计算机科学与技术'),
                         ('graduation_year', 2027), ('student_status', 'enrolled')]:
         profile['facts'][axis] = {'value': value, 'status': 'confirmed',
                                  'source': 'FICTIONAL DEMO ONLY', 'confirmed_at': '2026-09-16'}
@@ -31,7 +31,7 @@ def run(output):
     fixture.root, fixture.rid = root, rid
     fixture.company = '虚构演示公司（不代表真实招聘）'
     fixture.prefix = 'https://jobs.example.test/acme'
-    fixture.title = '环境算法工程师（虚构演示）'
+    fixture.title = '机器学习算法工程师（虚构演示）'
     job = fixture.make_job()
     first = scout.ingest(root, rid, [job])
     repeated = scout.ingest(root, rid, [job])
@@ -40,7 +40,7 @@ def run(output):
     rejected = scout.ingest(root, rid, [forged])
     scout.add_lead(root, rid, {
         'url': 'https://jobs.example.test/unverified', 'title_hint': '虚构待核实入口',
-        'company_hint': '未知', 'industry': '环保水务', 'found_at': scout.timestamp(),
+        'company_hint': '未知', 'industry': '人工智能', 'found_at': scout.timestamp(),
         'tool_ref': 'FICTIONAL DEMO ONLY', 'reason': '演示：尚无岗位正文证据',
     })
     stats = scout.finalize(root, rid)

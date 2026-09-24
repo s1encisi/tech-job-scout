@@ -1,0 +1,37 @@
+{
+  "code": 0,
+  "message": "",
+  "traceId": "",
+  "data": {
+    "list": [
+      {
+        "id": "10001",
+        "title": "虚构测试软件岗位",
+        "addressDetailList": [
+          {
+            "addressId": "REDACTED",
+            "addressDetail": "上海"
+          }
+        ],
+        "competencyType": "REDACTED",
+        "jobNature": "全职",
+        "jobNatureId": 1,
+        "projectName": "2027届秋招",
+        "hurry": true,
+        "channelDetailIds": [
+          1,
+          2
+        ],
+        "tagList": [],
+        "jobSummary": "",
+        "objectId": "REDACTED",
+        "objectName": "REDACTED"
+      }
+    ],
+    "pageNo": 1,
+    "pageSize": 1,
+    "total": 1
+  },
+  "success": true,
+  "error": false
+}

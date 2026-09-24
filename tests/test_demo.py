@@ -29,7 +29,7 @@ class DemoTests(unittest.TestCase):
             self.assertEqual(summary['duplicate_ingest_new_jobs'], 0)
             self.assertEqual(summary['quarantined_observations'], 1)
             self.assertEqual(summary['run_status'], 'partial')
-            workbook = output / 'exports/环境_AI_岗位追踪_latest.xlsx'
+            workbook = output / 'exports/科技_岗位追踪_latest.xlsx'
             with ZipFile(workbook) as archive:
                 xml = ET.fromstring(archive.read('xl/workbook.xml'))
                 sheets = xml.findall('{*}sheets/{*}sheet')

@@ -36,3 +36,10 @@ venv/
 .vscode/
 .DS_Store
 Thumbs.db
+
+/.task-research/
+/tech-workspace/
+
+/demo-tech*/
+/sources/
+/capture*.json

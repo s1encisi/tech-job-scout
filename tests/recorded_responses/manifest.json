@@ -1,0 +1,65 @@
+{
+  "notice": "Recorded source structures with synthetic content; not actual job advertisements.",
+  "fixtures": [
+    {
+      "file": "mihoyo-detail.json",
+      "adapter": "mihoyo",
+      "kind": "detail",
+      "original_response_sha256": "b10eb2c330bd45836a94f6f93051b113dfef44fbb3d2244efd634c9322c6e4d9",
+      "original_capture_time": "2026-09-17T13:05:05+00:00",
+      "fixture_sha256": "7d05c35f9608643d53a2aabb016ba5533a3ca8033fc70f2c34866b7ce6a43f0b",
+      "provenance": "Stored collector response",
+      "sanitization": "Original envelope and one record shape retained; identifiers/descriptive strings replaced; existing pagination values reduced to one-record fixture."
+    },
+    {
+      "file": "mihoyo-list.json",
+      "adapter": "mihoyo",
+      "kind": "list",
+      "original_response_sha256": "45f372f92cffd6ba282a3deed6edef3afcb2d8e5899e7216337815896a494dda",
+      "original_capture_time": "2026-09-17T10:51:56+00:00",
+      "fixture_sha256": "2b4dd1e0a5be787accebecb656ff5c332f11d0032b28d2527ad515676539331f",
+      "provenance": "Stored collector response",
+      "sanitization": "Original envelope and one record shape retained; identifiers/descriptive strings replaced; existing pagination values reduced to one-record fixture."
+    },
+    {
+      "file": "netease-detail.json",
+      "adapter": "netease",
+      "kind": "detail",
+      "original_response_sha256": "16d8a309d38a71b11423f409cc5cfe442d974b5eaea23591bfe566b0b2f84e4f",
+      "original_capture_time": null,
+      "fixture_sha256": "127e8de4986783f7d8834fc610d92eca10b8116a01dd15e3a5284850332e6aff",
+      "provenance": "Earlier inspected research capture",
+      "sanitization": "Original envelope and one record shape retained; identifiers/descriptive strings replaced; existing pagination values reduced to one-record fixture."
+    },
+    {
+      "file": "netease-list.json",
+      "adapter": "netease",
+      "kind": "list",
+      "original_response_sha256": "84ffbec38d66485f8a82fe75e3c4b06d6caa55c55e741cf926a62b60a6e1da07",
+      "original_capture_time": "2026-09-17T10:50:44+00:00",
+      "fixture_sha256": "8271a90348786f4da61f477e336101b663bee3a79ff345f576267c19d82d86a6",
+      "provenance": "Stored collector response",
+      "sanitization": "Original envelope and one record shape retained; identifiers/descriptive strings replaced; existing pagination values reduced to one-record fixture."
+    },
+    {
+      "file": "tencent-detail.json",
+      "adapter": "tencent",
+      "kind": "detail",
+      "original_response_sha256": "3ae207de0ea4777fde5dff030f9b0f2d67ebb52ca17f6ab17b78400501eca2c1",
+      "original_capture_time": "2026-09-17T13:04:47+00:00",
+      "fixture_sha256": "b812a1402557e8afe79caa37986a704e6f197f63986f1ac3111118725279d69a",
+      "provenance": "Stored collector response",
+      "sanitization": "Original envelope and one record shape retained; identifiers/descriptive strings replaced; existing pagination values reduced to one-record fixture."
+    },
+    {
+      "file": "tencent-list.json",
+      "adapter": "tencent",
+      "kind": "list",
+      "original_response_sha256": "e3d8466749c18ab361df2600b99c6f9a8f10b673adc4da502bda18c9b6f21b9d",
+      "original_capture_time": "2026-09-17T10:51:42+00:00",
+      "fixture_sha256": "bb6f3cb7e1bc3e4b75617d5a1e3e5a9b741fddf0f0e1197c8353b9baf8a41004",
+      "provenance": "Stored collector response",
+      "sanitization": "Original envelope and one record shape retained; identifiers/descriptive strings replaced; existing pagination values reduced to one-record fixture."
+    }
+  ]
+}

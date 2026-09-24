@@ -1,0 +1,36 @@
+{
+  "code": 200,
+  "msg": null,
+  "data": {
+    "pages": 1,
+    "total": 1,
+    "list": [
+      {
+        "id": 10001,
+        "name": "虚构测试软件岗位",
+        "workType": "0",
+        "firstPostTypeName": "REDACTED",
+        "recruitNum": 1,
+        "requirement": "合成测试第一段。\n合成测试第二段。",
+        "description": "合成测试第一段。\n合成测试第二段。",
+        "reqEducationName": "本科",
+        "reqWorkYearsName": "5-10年",
+        "firstDepName": "REDACTED",
+        "workPlaceList": [
+          229
+        ],
+        "updateTime": 1788414706000,
+        "product": "REDACTED",
+        "productName": "REDACTED",
+        "workPlaceNameList": [
+          "上海"
+        ],
+        "geekPassionateTalentFlag": 0,
+        "beeUrl": null
+      }
+    ],
+    "lastPage": false
+  },
+  "subCode": null,
+  "traceId": "REDACTED"
+}

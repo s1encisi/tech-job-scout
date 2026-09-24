@@ -1,0 +1,28 @@
+{
+  "Code": 200,
+  "Data": {
+    "Count": 1,
+    "Posts": [
+      {
+        "Id": 10001,
+        "PostId": "10001",
+        "RecruitPostId": 10001,
+        "RecruitPostName": "虚构测试软件岗位",
+        "CountryName": "中国",
+        "LocationName": "上海",
+        "BGName": "REDACTED",
+        "ComCode": "",
+        "ComName": "",
+        "ProductName": "",
+        "CategoryName": "REDACTED",
+        "Responsibility": "合成测试第一段。\n合成测试第二段。",
+        "LastUpdateTime": "REDACTED",
+        "PostURL": "https://jobs.example.test/10001",
+        "SourceID": 4,
+        "IsCollect": false,
+        "IsValid": true,
+        "RequireWorkYearsName": ""
+      }
+    ]
+  }
+}

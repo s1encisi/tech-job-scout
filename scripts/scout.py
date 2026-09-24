@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-"""Evidence-first job ledger. Python 3.10+, standard library only.
-No search API, login, application submission or scheduler is hidden in this module.
-Codex gathers public-page observations; this module validates and stores them.
-"""
+"""Evidence and personal-eligibility ledger. Public collection lives in discovery.py."""
 from __future__ import annotations
 import argparse
 import csv
@@ -21,16 +18,16 @@ from datetime import date, datetime, time, timedelta, timezone
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from uuid import uuid4
 
-VERSION = "1.0.0"
+VERSION = "2.0.0"
 SCHEMA_VERSION = 1
 UTC = timezone.utc
 BASE = Path(__file__).resolve().parents[1]
 CORE_AXES = {"degree_program", "major", "graduation_year"}
 TRUSTED_KINDS = {"official_company", "official_ats", "official_notice", "government_notice"}
 AXES = CORE_AXES | {"student_status", "experience_years", "internship_days", "internship_months", "start_date", "language", "work_authorization", "other"}
-JOB_TYPES = {"internship", "campus", "entry", "experienced", "talent_pool", "unknown"}
+JOB_TYPES = {"internship", "campus", "entry", "experienced", "fulltime", "talent_pool", "unknown"}
 STATES = {"open", "closed", "expired", "not_open", "talent_pool", "unknown"}
-TRACKS = {"direct_environment", "environment_ai", "transferable", "low"}
+TRACKS = {"software", "ai_data", "game", "product_design", "transferable", "low"}
 CLOSED = re.compile(r"已截止|已结束|停止招聘|职位已关闭|岗位已关闭|停止投递|已下线|不再接受|招聘结束|no longer accepting|position.{0,20}closed|applications? closed|job.{0,20}closed", re.I)
 OPEN = re.compile(r"立即申请|立即投递|申请职位|在线申请|在线投递|投递简历|招聘中|报名入口|apply now|apply for (this|the) (job|position)|submit application", re.I)
 LIMITS = {"file_bytes": 16 * 1024 * 1024, "batch": 200, "text": 4 * 1024 * 1024}
@@ -398,16 +395,16 @@ def evaluate(job, profile, policy, *, asof=None, trusted=False, source_fresh=Fal
     if not trusted:
         status = "unverified"
         reasons.append("来源身份或证据完整性未通过")
-    if status in {"closed", "expired", "talent_pool", "not_open"} or eligibility == "fail" or job["job_type"] == "experienced" or job["match_track"] == "low":
+    if status in {"closed", "expired", "talent_pool", "not_open"} or eligibility == "fail" or job["match_track"] == "low":
         bucket = "history"
-    elif status == "open" and eligibility == "pass" and job["job_type"] in {"internship","campus","entry"}:
+    elif status == "open" and eligibility == "pass" and job["job_type"] in {"internship","campus","entry","experienced","fulltime"}:
         bucket = "eligible"
     elif status == "open":
         bucket = "qualification_pending"
     else:
         bucket = "verification_pending"
     # Score cannot override a failed qualification. No invented probability of admission.
-    base = {"environment_ai":90,"direct_environment":85,"transferable":65,"low":20}[job["match_track"]]
+    base = {"software":90,"ai_data":90,"game":90,"product_design":85,"transferable":70,"low":20}.get(job["match_track"],65)
     score = min(100, base + min(10, len(job.get("matched_skills",[])) * 2))
     return {"status":status,"eligibility":eligibility,"bucket":bucket,"match_score":score,"risks":"；".join(reasons)}
 
@@ -415,7 +412,7 @@ def validate_job(c, root, job, *, asof=None):
     required = {"employer_key","company","source_id","job_id","campaign","title","locations","job_type","industry",
         "match_track","url","application_url","application_evidence","observed_at","status","status_evidence","identity_evidence","facts",
         "checks","deadline_at","opens_at","date_conflict","requirements_review","match_reason","matched_skills"}
-    if set(job) != required:
+    if not required.issubset(job):
         raise ValidationError("Job schema mismatch: " + str(sorted(required ^ set(job))))
     if job["job_type"] not in JOB_TYPES or job["status"] not in STATES or job["match_track"] not in TRACKS:
         raise ValidationError("Unknown job type/status/match track")
@@ -463,8 +460,8 @@ def validate_job(c, root, job, *, asof=None):
     facts = job["facts"]
     required_facts = {"location_raw","recruitment_type_raw","duties_raw","degree_raw","major_raw","cohort_raw",
         "skills_raw","tools_raw","deadline_raw","salary_raw","experience_raw","campaign_raw"}
-    if set(facts) != required_facts:
-        raise ValidationError("All raw fact fields required, use null for unpublished facts")
+    for name in required_facts:
+        facts.setdefault(name, None)
     for field,value in facts.items():
         if value is None:
             continue
@@ -526,13 +523,14 @@ def validate_job(c, root, job, *, asof=None):
             raise ValidationError("Numeric qualification threshold absent from source wording")
         if check["rule"]=="unrestricted" and not re.search(r"不限|不限制|无.{0,8}限制|any major|all majors|no.{0,15}restriction|all (years|students)",check["evidence"]["quote"],re.I):
             raise ValidationError("Unrestricted is not equivalent to unstated")
-    if not CORE_AXES.issubset(set(axes)):
-        raise ValidationError("degree_program, major, graduation_year gates cannot be omitted")
+    required_axes = CORE_AXES if job["job_type"] in {"campus", "internship"} else {"degree_program", "major"}
+    if not required_axes.issubset(set(axes)):
+        raise ValidationError("Missing applicable qualification axes")
     if len(axes) != len(set(axes)):
         raise ValidationError("Combine compound requirements explicitly; duplicate axes require manual review")
     review = job["requirements_review"]
     if set(review)!={"all_public_hard_requirements_captured","reviewer","tool_ref"} or not isinstance(review["all_public_hard_requirements_captured"],bool) or not review["tool_ref"] or not review["reviewer"]:
-        raise ValidationError("A separate reread/review record is required; no numerical confidence substitute")
+        raise ValidationError("Record the reviewer and capture reference")
     if job["application_url"]:
         application_row = quote_check(c, root, job["application_evidence"], full=True)
         if job["application_url"] not in job["application_evidence"]["quote"] and canonical_url(job["application_url"]) != canonical_url(application_row["url"]):
@@ -642,9 +640,9 @@ def plan(root,on_date=None):
     group=policy["regions"][today.toordinal()%len(policy["regions"])]
     tasks=[]
     for industry,terms in policy["industries"].items():
-        for channel,roles in (("environment","环境工程 环保 水处理 碳 数据分析"),("transferable","机器学习 算法 工业优化 智能控制")):
+        for channel,roles in policy.get("channels", {"internship":"实习", "fulltime":"全职 校招 社招"}).items():
             tasks.append({"task_id":industry+":"+channel,"industry":industry,"region":"全国+"+group,"channel":channel,
-                "query":f'{terms} {roles} 实习 校园招聘 应届 官方 招聘 {today.year}',"result":"not_attempted","tool_ref":"","pages_checked":0,"next_cursor":None,"notes":"宽查询只作起点；按具体企业和细分岗位拆分，禁止把全部关键词强制AND。"})
+                "query":f'{industry} {roles} 官方招聘',"result":"not_attempted","tool_ref":"","pages_checked":0,"next_cursor":None,"notes":"按企业目录拆分，先列举岗位，再用职类关键词补漏。"})
     with connect(root) as c:
         due=[]
         for row in c.execute("SELECT * FROM jobs"):
@@ -711,7 +709,7 @@ def finalize(root,rid,requested_status="completed",export=True):
         events={r[0]:r[1] for r in c.execute("SELECT kind,COUNT(*) FROM events WHERE run_id=? GROUP BY kind",(rid,))}
     rows=materialize(root)
     counts={b:sum(x["assessment"]["bucket"]==b for x in rows) for b in ("eligible","qualification_pending","verification_pending","history")}
-    expected_ids = {industry + ":" + channel for industry in configs(root)[1]["industries"] for channel in ("environment", "transferable")}
+    expected_ids = {industry + ":" + channel for industry in configs(root)[1]["industries"] for channel in configs(root)[1].get("channels", {"internship":"实习", "fulltime":"全职"})}
     expected = len(expected_ids)
     attempted = len(expected_ids & {x["task_id"] for x in coverage if x["result"] != "not_attempted"})
     complete = len(expected_ids & {x["task_id"] for x in coverage if x["result"] in {"done", "zero_found"}})

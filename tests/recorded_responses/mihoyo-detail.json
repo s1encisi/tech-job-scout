@@ -1,0 +1,41 @@
+{
+  "code": 0,
+  "message": "",
+  "traceId": "",
+  "data": {
+    "id": "10001",
+    "code": "",
+    "title": "虚构测试软件岗位",
+    "addressDetailList": [
+      {
+        "addressId": "REDACTED",
+        "addressDetail": "上海"
+      }
+    ],
+    "competencyTypeId": "REDACTED",
+    "competencyType": "REDACTED",
+    "jobNatureId": 1,
+    "jobNature": "全职",
+    "projectName": "2027届秋招",
+    "description": "合成测试第一段。\n合成测试第二段。",
+    "jobRequire": "合成测试第一段。\n合成测试第二段。",
+    "addition": "REDACTED",
+    "deliveryInstructions": "",
+    "hadDelivery": 0,
+    "status": 1,
+    "channelDetailIds": [
+      1,
+      2
+    ],
+    "objectId": "REDACTED",
+    "objectName": "REDACTED",
+    "projectId": 13,
+    "hireType": 1,
+    "hireTypeName": "REDACTED",
+    "hurry": true,
+    "tagList": [],
+    "jobSummary": ""
+  },
+  "success": true,
+  "error": false
+}

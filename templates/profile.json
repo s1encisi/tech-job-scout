@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "profile_version": "1.0.0",
+  "profile_version": "2.0.0",
   "display_name": "示例用户",
-  "background": "环境与人工智能交叉方向；请根据实际情况配置",
+  "background": "互联网、计算机与游戏岗位求职",
   "facts": {
     "degree_program": {
       "value": null,
@@ -74,37 +74,39 @@
   "search_skills": [
     "Python",
     "机器学习",
-    "强化学习",
-    "代理模型",
-    "多目标优化",
-    "工业过程建模",
+    "Java",
+    "Go",
+    "C++",
+    "SQL",
+    "前端开发",
     "数据分析",
-    "可解释机器学习"
+    "Unity",
+    "Unreal Engine"
   ],
   "skill_provenance": "示例检索关键词，不代表任何使用者的已确认技能；使用前按实际情况修改。",
   "research_domains": [
-    "环境过程优化",
-    "工业智能"
+    "软件工程",
+    "人工智能",
+    "游戏研发"
   ],
   "search_scope": {
-    "locations": "中国全国（任务默认检索范围，不是已确认工作地点偏好）",
+    "locations": "中国全国",
     "employers": [
-      "央企",
-      "地方国企",
-      "国有控股",
-      "民营",
-      "民营控股",
-      "其他企业：性质单列"
+      "互联网平台",
+      "计算机与软件企业",
+      "游戏研发与发行企业"
     ],
     "job_types": [
       "internship",
       "campus",
-      "entry"
+      "entry",
+      "experienced",
+      "fulltime"
     ],
     "exclude_default": [
-      "需多年经验岗位进入历史与排除，不混入可投清单"
+      "环境工程、环保、水处理等岗位；游戏环境美术与开发环境岗位保留"
     ]
   },
-  "unknown_policy": "不从博士申请年份、会话时间、年龄或模型记忆推断毕业届别、正式专业名称/代码和实习可用时间。",
-  "update_authority": "只有用户确认才能修改个人事实；检索代理只能提出 profile.proposed.json，不得自动提升为 confirmed。"
+  "unknown_policy": "个人事实在确认后填写；缺失信息不影响岗位发现。",
+  "update_authority": "用户维护个人事实，检索过程只读取。"
 }

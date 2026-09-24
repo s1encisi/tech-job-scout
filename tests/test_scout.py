@@ -27,13 +27,13 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
         self.root=Path(self.temp.name)/"workspace"
         scout.init_workspace(self.root)
         profile=scout.read_json(self.root/"profile.json")
-        for key,value in (("degree_program","master"),("student_status","enrolled"),("major","环境工程"),("graduation_year",2027)):
+        for key,value in (("degree_program","master"),("student_status","enrolled"),("major","计算机科学与技术"),("graduation_year",2027)):
             profile["facts"][key]={"value":value,"status":"confirmed","source":"TEST FIXTURE ONLY, NOT THE REAL USER","confirmed_at":"2026-09-15"}
         scout.write_json(self.root/"profile.json",profile)
         self.rid=scout.begin(self.root)["run_id"]
         self.company="虚构测试公司（不是实际招聘企业）"
         self.prefix="https://jobs.example.test/acme"
-        self.title="环境算法工程师（虚构测试）"
+        self.title="机器学习算法工程师（虚构测试）"
 
     def tearDown(self):self.temp.cleanup()
 
@@ -58,7 +58,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
         self.assertEqual(self.row()["assessment"]["bucket"],"qualification_pending")
 
     def test_04_explicit_wrong_major_fails_even_with_high_score(self):
-        job=self.make_job(major="计算机科学与技术");self.assertEqual(self.ingest(job)["accepted"],1)
+        job=self.make_job(major="临床医学");self.assertEqual(self.ingest(job)["accepted"],1)
         self.assertEqual(self.row()["assessment"]["eligibility"],"fail")
         self.assertEqual(self.row()["assessment"]["bucket"],"history")
         self.assertGreater(self.row()["assessment"]["match_score"],90)
@@ -188,7 +188,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
         self.assertEqual(self.ingest(job)["quarantined"],1)
 
     def test_34_invented_accepted_major_is_rejected(self):
-        job=self.make_job(major="计算机科学与技术");job["checks"][1]["expected"]=["计算机科学与技术","环境工程"]
+        job=self.make_job(major="临床医学");job["checks"][1]["expected"]=["临床医学","计算机科学与技术"]
         self.assertEqual(self.ingest(job)["quarantined"],1)
 
     def test_35_not_stated_does_not_mean_unrestricted(self):
@@ -225,7 +225,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
 
     def test_43_adhoc_task_ids_cannot_inflate_coverage(self):
         for i in range(30):
-            entry={"task_id":"invented-"+str(i),"industry":"环保水务","region":"全国","channel":"environment","query":"TEST ONLY","result":"done","tool_ref":"fixture-query","pages_checked":1,"next_cursor":None,"notes":"OFFLINE FIXTURE"}
+            entry={"task_id":"invented-"+str(i),"industry":"人工智能","region":"全国","channel":"internship","query":"TEST ONLY","result":"done","tool_ref":"fixture-query","pages_checked":1,"next_cursor":None,"notes":"OFFLINE FIXTURE"}
             scout.add_coverage(self.root,self.rid,entry)
         result=scout.finalize(self.root,self.rid,export=False)
         self.assertEqual(result["completed_tasks"],0);self.assertEqual(result["run_status"],"partial")
@@ -235,7 +235,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
             entry.update(result="zero_found",tool_ref="fixture-query",pages_checked=1)
             scout.add_coverage(self.root,self.rid,entry)
         result=scout.finalize(self.root,self.rid,export=False)
-        self.assertEqual(result["completed_tasks"],24);self.assertEqual(result["run_status"],"completed")
+        self.assertEqual(result["completed_tasks"],16);self.assertEqual(result["run_status"],"completed")
 
     def test_45_backup_is_readable_and_keeps_jobs(self):
         self.ingest(self.make_job());scout.finalize(self.root,self.rid,export=False)
@@ -319,7 +319,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
         self.assertEqual(result["quarantined"],1);self.assertEqual(self.row()["last_seen"],new_time)
 
     def test_59_exclusion_cannot_be_positive_major_match(self):
-        job=self.make_job(major="环境工程除外");job["checks"][1]["expected"]=["环境工程"]
+        job=self.make_job(major="计算机科学与技术除外");job["checks"][1]["expected"]=["计算机科学与技术"]
         self.assertEqual(self.ingest(job)["quarantined"],1)
 
     def test_60_unknown_normalized_recruitment_type_cannot_claim_campus(self):
@@ -332,7 +332,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
         self.assertEqual(self.ingest(job)["quarantined"],1)
 
     def test_62_unverified_lead_is_preserved_but_never_eligible(self):
-        lead={"url":"https://jobs.example.test/unknown", "title_hint":"测试搜索标题（未核实）", "company_hint":"待确认", "industry":"环保水务", "found_at":scout.timestamp(), "tool_ref":"fixture-search", "reason":"正文无法读取"}
+        lead={"url":"https://jobs.example.test/unknown", "title_hint":"测试搜索标题（未核实）", "company_hint":"待确认", "industry":"人工智能", "found_at":scout.timestamp(), "tool_ref":"fixture-search", "reason":"正文无法读取"}
         result=scout.add_lead(self.root,self.rid,lead)
         self.assertFalse(result["counted_as_eligible"])
         scout.add_lead(self.root,self.rid,lead)
@@ -342,7 +342,7 @@ class LedgerTests(FictionalJobFixture, unittest.TestCase):
 
     def test_63_lead_resolution_keeps_history(self):
         job=self.make_job()
-        lead={"url":job["url"], "title_hint":job["title"], "company_hint":"待确认", "industry":"环保水务", "found_at":scout.timestamp(), "tool_ref":"fixture-search", "reason":"等待职位核验"}
+        lead={"url":job["url"], "title_hint":job["title"], "company_hint":"待确认", "industry":"人工智能", "found_at":scout.timestamp(), "tool_ref":"fixture-search", "reason":"等待职位核验"}
         scout.add_lead(self.root,self.rid,lead);self.ingest(job)
         with scout.connect(self.root) as c:resolved=c.execute("SELECT resolved_key FROM leads").fetchone()[0]
         self.assertEqual(resolved,scout.job_key(job));self.assertEqual(self.count("leads"),1)

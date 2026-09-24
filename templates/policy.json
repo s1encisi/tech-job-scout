@@ -1,32 +1,28 @@
 {
   "schema_version": 1,
-  "policy_version": "1.0.0",
+  "policy_version": "2.0.0",
   "fresh_hours": 30,
   "source_review_days": 30,
   "deadline_timezone_default": "Asia/Shanghai",
   "date_only_deadline_convention": "明确中国境内招聘、明确完整日期但无时分时，可规范化为该日期23:59:59+08:00，必须在日期备注/匹配说明标注该假设；跨境或有冲突则保留原文并待核实。",
   "budgets": {
-    "search_calls": 80,
-    "detail_pages": 160,
+    "search_calls": 120,
+    "detail_pages": 200,
     "concurrency": 3,
     "max_same_host_concurrency": 1,
     "max_retries": 2,
-    "max_batch_observations": 20,
+    "max_batch_observations": 100,
     "checkpoint_every_batches": 1
   },
   "industries": {
-    "环保水务": "环保 水务 固废 环境监测",
-    "能源电力": "能源 电力 电网 综合能源",
-    "新能源储能": "光伏 风电 储能 电池",
-    "化工材料": "化工 材料 石化 精细化工",
-    "冶金矿业": "冶金 矿业 有色金属 钢铁",
-    "智能制造": "智能制造 自动化 工业机器人",
-    "工业软件": "工业软件 工业互联网 数字孪生",
-    "互联网AI": "互联网 人工智能 大模型 数据平台",
-    "交通物流": "交通 物流 轨道 航运",
-    "通信数字科技": "通信 数字科技 云计算",
-    "咨询检测碳管理": "环境咨询 检验检测 碳管理 ESG",
-    "工程设计与研究": "工程设计 研究院 环境技术研发"
+    "综合互联网": "腾讯 字节跳动 阿里巴巴",
+    "电商与生活服务": "携程 得物 唯品会",
+    "内容与社交": "哔哩哔哩 知乎 微博",
+    "企业软件与云": "金山软件 金山办公 用友",
+    "人工智能": "商汤科技 旷视科技 科大讯飞",
+    "计算机与基础设施": "华为 中兴通讯 小米",
+    "游戏研发与发行": "米哈游 莉莉丝 叠纸游戏",
+    "金融与开发者服务": "东方财富 同花顺 恒生电子"
   },
   "regions": [
     "京津冀＋东北",
@@ -38,18 +34,19 @@
     "甘肃青海宁夏新疆＋全国补漏"
   ],
   "hard_rules": [
-    "无证据不升级",
-    "缺资格不默认通过",
-    "不以数量换真实性",
-    "不自动投递或发送",
-    "不因HTTP失败直接关闭岗位",
-    "不把人才储备计为在招",
-    "不得自动改写画像与本规则"
+    "原文与来源随岗位保存",
+    "资格匹配与岗位发现分开",
+    "个人资料和人工备注保留",
+    "投递由用户操作"
   ],
-  "coverage_target": "每天12行业×2发现通道＋已收录岗位复核；地区轮转；每7天审计公司池/地区/企业性质覆盖。预算耗尽报告partial。",
-  "quantity_target": "尽量积累100+真实有效岗位；不是每天100条，不足如实报告，不凑数。",
+  "coverage_target": "企业×用工类型覆盖；优先补齐未访问企业和过期来源，记录分页游标。",
+  "quantity_target": "按已注册企业清单扩大公开岗位覆盖。",
   "source_policy": "公司官网→明确链接的官方ATS/正式公告。高校转载/聚合站为线索，未经回溯不计已核实。",
-  "skills_scoring": "environment_ai=90/direct_environment=85/transferable=65/low=20，加已确认匹配技能数×2，上限加10；总分≤100。非概率。",
+  "skills_scoring": "software=90 / ai_data=90 / game=90 / product_design=85 / transferable=70 / low=20；匹配关键词每项加2，上限10。",
   "memory_budget_chars": 24000,
-  "default_timezone_note": "任务触发时区使用实际调度器设置，不从招聘所在地或聊天地点推断。"
+  "default_timezone_note": "任务触发时区使用实际调度器设置，不从招聘所在地或聊天地点推断。",
+  "channels": {
+    "internship": "实习",
+    "fulltime": "校招 社招 全职"
+  }
 }

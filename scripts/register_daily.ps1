@@ -3,7 +3,7 @@
 param(
     [Parameter(Mandatory = $true)][string]$Workspace,
     [Parameter(Mandatory = $true)][ValidatePattern('^([01][0-9]|2[0-3]):[0-5][0-9]$')][string]$At,
-    [string]$TaskName = 'EnvAIJobScout',
+    [string]$TaskName = 'TechJobScout',
     [switch]$Register
 )
 $ErrorActionPreference = 'Stop'
@@ -25,5 +25,5 @@ if ($PSCmdlet.ShouldProcess($TaskName, 'Create daily local scheduled task')) {
     $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Hours 2)
     $user = [Security.Principal.WindowsIdentity]::GetCurrent().Name
     $principal = New-ScheduledTaskPrincipal -UserId $user -LogonType Interactive -RunLevel Limited
-    Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Principal $principal -Description 'Evidence-first environment + AI job search with Codex; no auto-application.'
+    Register-ScheduledTask -TaskName $TaskName -Action $action -Trigger $trigger -Settings $settings -Principal $principal -Description 'Public technology and game recruitment collection with Codex.'
 }

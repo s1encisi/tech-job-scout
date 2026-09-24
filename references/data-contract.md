@@ -29,8 +29,8 @@ identity_evidence与authorization_evidence均为 `{ "evidence_id":"实际ID", "q
 授权quote必须保留完整prefix URL，并来自身份可信的官网/正式公告跳转证据。shared ATS只登记具体企业租户路径/查询标识，不整站授权。
 ownership不明填unknown，ownership_evidence=null；明确归类必须有真实股权/企业官方说明，不能从名称补编。
 
-## observation精确字段
-见example JSON。每个raw fact为null，或 `{ "value":"真实短原文", "evidence": {"evidence_id":"实际ID","quote":"包含value的原文"} }`。
+## observation字段
+见example JSON。允许附加元数据，未提供的raw字段按null处理。每个raw fact为null，或 `{ "value":"真实短原文", "evidence": {"evidence_id":"实际ID","quote":"包含value的原文"} }`。
 job_type、match_track、industry和match_reason是有依据的分类/推断；不得标成官方原文。
 job_id缺失填null，不自己编一个像官方编号的值。campaign必须是证据出现的批次；未知以unknown-cycle:具体来源标识隔离，不推测届别。
 locations列表不拆分计数；同ID同时包含多地作为一岗。页面没有地点则空列表，不从公司总部推断。
@@ -39,12 +39,12 @@ locations列表不拆分计数；同ID同时包含多地作为一岗。页面没
 application_url为null或实际URL；有链接时必须有application_evidence，其结构为evidence_id/quote。URL必须原样出现在证据quote，或与该真实工具记录的最终页面URL一致，还必须落在已核实来源授权范围。有效官网域名不意味着可以猜测该域名下任意投递路径。无直接投递链接时保留未公开，不能自造。
 
 ### checks
-字段固定axis/rule/expected/evidence。degree_program/major/graduation_year必需；其它已公开硬要求补充。
+字段固定axis/rule/expected/evidence。学历与专业作为基础检查；实习和校招另查毕业届别，社招按公开要求补充经验等条件。
 axis允许degree_program、major、graduation_year、student_status、experience_years、internship_days、internship_months、start_date、language、work_authorization、other。
 rule：one_of（列表精确匹配）、min/max（数字）、on_or_before（ISO日期）、unrestricted（明确不限）、unpublished（未公开）、manual（语义歧义或不能自动判断）。
 除unpublished外必须有evidence。unpublished的evidence=null。
 在读master只对应在读学历项目；已获硕士学位、学信网、第一学历、学位证等复杂条件用manual/other，不把在读等同已毕业。
-正式专业未知时，专业名单岗位不能pass；即使环境＋AI技能高度相关也一样。
+正式专业未知的名单限制标记为待确认；技能相关性单独排序。
 expected中的英文标准枚举需能映射回确切中文原文；复杂“相关专业”或排除条件用manual，不强行枚举。
 语言/证书/实习可用时间等未确认时unknown；不能编造熟练度或可到岗天数。
 requirements_review保存完整硬要求是否复核、reviewer与真实tool_ref；不得自己填“已独立核验”冒充独立审计。

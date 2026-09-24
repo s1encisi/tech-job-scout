@@ -1,0 +1,17 @@
+{
+  "generator": "Built-in GPT image generation tool",
+  "assets": [
+    {
+      "file": "assets/architecture.png",
+      "width": 1774,
+      "height": 887,
+      "sha256": "81c8cfd6ed822740d2c0f55eac2fe59e77c2cb820c5e4bf3692a19f3282fccd2"
+    },
+    {
+      "file": "assets/search-coverage.png",
+      "width": 1774,
+      "height": 887,
+      "sha256": "507993e8de05b02a5786d15653a330ce06384a790f374db442bde4184c516b34"
+    }
+  ]
+}
